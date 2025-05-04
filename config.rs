@@ -41,3 +41,18 @@ pub struct MonitoringConfig {
 pub struct LoggingConfig {
     pub level: String,
 }
+
+#[derive(Deserialize)]
+pub struct InputVecConfig {
+    pub include_1hop: bool,
+    pub include_2hop: bool,
+    pub numbers_of_best_paths: usize,
+    pub get_fresh_pools_bool: bool,
+    pub tokens_to_arb: Vec<TokenInArbConfig>,
+}
+
+#[derive(Deserialize)]
+pub struct TokenInArbConfig {
+    pub address: String,
+    pub symbol:  String,
+}
